@@ -1,0 +1,110 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>THE WORLD TODAY</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1024px; height: 1024px; overflow: hidden; }
+  /* A column that fills the square: the story grid takes whatever height the other bands leave. */
+  body { background: #f3eee2; color: #1b1a17; font-family: Georgia, 'Times New Roman', serif; padding: 22px 28px 34px;
+         display: flex; flex-direction: column; }
+
+  header { text-align: center; }
+  .ear { display: flex; justify-content: space-between; font: 600 11px/1 Arial, sans-serif; letter-spacing: .14em;
+         text-transform: uppercase; color: #555; border-bottom: 1px solid #1b1a17; padding-bottom: 6px; }
+  h1 { font: 700 78px/1 'Times New Roman', Georgia, serif; letter-spacing: .02em; margin: 8px 0 6px; }
+  .dateline { display: flex; justify-content: space-between; align-items: center; border-top: 3px double #1b1a17;
+              border-bottom: 3px double #1b1a17; padding: 5px 2px; font: italic 15px/1.2 Georgia, serif; }
+  .dateline b { font: 700 15px/1.2 Georgia, serif; font-style: normal; }
+
+  .lead { display: grid; grid-template-columns: 1fr 318px; gap: 26px; padding: 20px 0 18px; border-bottom: 2px solid #1b1a17; }
+  .lead .kick { font: 700 13px/1 Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: #a5361f; }
+  .lead h2 { font: 900 64px/0.96 'Times New Roman', Georgia, serif; margin: 12px 0 16px; letter-spacing: -.01em; }
+  .lead .deck { font: 21px/1.38 Georgia, serif; color: #2a2925; }
+  .lead .deck strong { color: #a5361f; }
+  .stats { display: grid; grid-template-rows: repeat(3, 1fr); border-left: 1px solid #1b1a17; padding-left: 22px; }
+  .stat { display: flex; align-items: baseline; gap: 12px; border-bottom: 1px solid #c9c1ad; }
+  .stat:last-child { border-bottom: 0; }
+  .num { font: 700 54px/1.05 'Times New Roman', Georgia, serif; color: #a5361f; min-width: 140px; text-align: right; }
+  .lbl { font: 700 13px/1.15 Arial, sans-serif; text-transform: uppercase; letter-spacing: .08em; color: #333; }
+
+  .grid { flex: 1; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); padding: 16px 0;
+          border-bottom: 2px solid #1b1a17; }
+  .story { padding: 0 12px; border-left: 1px solid #c9c1ad; display: flex; flex-direction: column; }
+  .story:first-child { border-left: 0; padding-left: 0; }
+  .story:last-child { padding-right: 0; }
+  .story .kick { font: 700 10.5px/1.2 Arial, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--c);
+                 border-top: 5px solid var(--c); padding-top: 7px; }
+  /* The big figure sits on a tinted band; Arial Narrow keeps "KOSPI −6.2%" inside a fifth of the page. */
+  .story .big { font: 700 34px/1.1 'Arial Narrow', Arial, sans-serif; color: var(--c); margin: 12px 0 12px;
+                white-space: nowrap; overflow: hidden; }
+  .story h3 { font: 700 18.5px/1.16 Georgia, serif; margin-bottom: 12px; }
+  .story p { font: 16.5px/1.5 Georgia, serif; color: #2a2925; }
+
+  .index { display: grid; grid-template-columns: 112px 1fr; gap: 16px; padding: 14px 0 16px; }
+  .index h4 { font: 900 22px/1 'Times New Roman', Georgia, serif; text-transform: uppercase; border-right: 1px solid #1b1a17;
+              display: flex; flex-direction: column; justify-content: center; }
+  .index h4 small { font: 600 10px/1.4 Arial, sans-serif; letter-spacing: .12em; color: #666; margin-top: 6px; }
+  .index ol { list-style: none; display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 8px; }
+  .index li { display: flex; gap: 10px; align-items: center; font: 17px/1.25 Georgia, serif;
+              border-bottom: 1px dotted #a79f8c; padding-bottom: 6px; }
+  .index .n { font: 700 13px/1 Arial, sans-serif; color: #f3eee2; background: #1b1a17; border-radius: 50%;
+              width: 21px; height: 21px; display: inline-flex; align-items: center; justify-content: center; flex: none; }
+
+  footer { position: absolute; left: 0; right: 0; bottom: 0; height: 34px; background: #1b1a17; color: #f3eee2;
+           display: flex; justify-content: space-between; align-items: center; padding: 0 28px;
+           font: 600 11px/1 Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+</style></head>
+<body>
+  <header>
+    <div class="ear"><span>International Edition</span><span>World · Markets · Science</span><span>Daily Summary</span></div>
+    <h1>THE WORLD TODAY</h1>
+    <div class="dateline"><span>All the day's world news on one page</span><b>Wednesday, November 25, 2026</b><span>Six stories · One page</span></div>
+  </header>
+
+  <section class="lead">
+    <div>
+      <div class="kick">Iran · Strait of Hormuz — War</div>
+      <h2>TANKERS ABLAZE IN HORMUZ</h2>
+      <p class="deck">Two oil tankers hit naval mines and catch fire in the Strait of Hormuz. <strong>Houthis strike Saudi Arabia's largest refinery.</strong></p>
+    </div>
+    <div class="stats"><div class="stat"><div class="num">2</div><div class="lbl">tankers hit</div></div><div class="stat"><div class="num">$89.73</div><div class="lbl">Brent crude</div></div><div class="stat"><div class="num">11</div><div class="lbl">hurt in Riyadh</div></div></div>
+  </section>
+
+  <section class="grid">
+    <article class="story" style="--c:#0d6b4c">
+      <div class="kick">Markets · Asia</div>
+      <div class="big">KOSPI −6.2%</div>
+      <h3>AI SELL-OFF SPREADS</h3>
+      <p>Asian stocks plunge on AI-spending doubts — KOSPI −6.2%, Nikkei −2.8% — and the S&amp;P 500 falls 2.2%.</p>
+    </article>
+    <article class="story" style="--c:#1d4f91">
+      <div class="kick">Ukraine · Russia — War</div>
+      <div class="big">−45%</div>
+      <h3>PUTIN VOWS RETALIATION</h3>
+      <p>Drone strikes cut Russian refinery output 45% since late October; Putin says retaliation is “inevitable”.</p>
+    </article>
+    <article class="story" style="--c:#6a3d8f">
+      <div class="kick">Tech · USA</div>
+      <div class="big">10 of 12</div>
+      <h3>HUAWEI GUILTY</h3>
+      <p>Brooklyn jury convicts Huawei of bank fraud, sanctions violations and trade-secret theft.</p>
+    </article>
+    <article class="story" style="--c:#1d4f91">
+      <div class="kick">Politics · USA</div>
+      <div class="big">258 seats</div>
+      <h3>DEMOCRATS' BIGGEST MAJORITY SINCE '92</h3>
+      <p>Democrats win their biggest House majority since 1992, flipping a Tennessee seat held by Republicans.</p>
+    </article>
+    <article class="story" style="--c:#b0471a">
+      <div class="kick">Space · China</div>
+      <div class="big">1st astronaut</div>
+      <h3>PAKISTAN'S FIRST ASTRONAUT</h3>
+      <p>Shenzhou-24 carries Pakistan's first astronaut into orbit, docking with Tiangong 3.5 hours after launch.</p>
+    </article></section>
+
+  <section class="index">
+    <h4>Index<small>IN BRIEF TODAY</small></h4>
+    <ol><li><span class="n">1</span><span>Two tankers hit mines in Hormuz</span></li><li><span class="n">2</span><span>KOSPI −6.2% as AI rout spreads</span></li><li><span class="n">3</span><span>Putin: retaliation “inevitable”</span></li><li><span class="n">4</span><span>Huawei guilty on 10 of 12 counts</span></li><li><span class="n">5</span><span>Democrats win 258 House seats</span></li><li><span class="n">6</span><span>Colombia siege ends; hostages freed</span></li></ol>
+  </section>
+
+  <footer><span>THE WORLD TODAY</span><span>Middle East · Europe · Asia · Americas · Science</span><span>Wednesday, November 25, 2026</span></footer>
+</body></html>
